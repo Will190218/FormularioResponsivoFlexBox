@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--doctype informa ao agente de usuario a versão do html que deve ser renderizada-->
+
+<html lang="pt-br">
+  <head>
+    <title>Formulário com flex-box Tutorial</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Willyam" />
+    <meta name="description" content="lista de documentos" />
+    <meta name="keywords" content="html5, tecnologia" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="normalize.css"
+      media="screen"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  </head>
+
+  <body>
+    <!-- fundo com imagem  <div id="parallelogram"></div>-->
+
+    <section>
+      <form action="#" method="POST">
+        <h1>Formulário</h1>
+        <fieldset>
+          <div class="container">
+            <input type="text" required name="name" autofocus />
+            <label>Nome</label>
+          </div>
+          <div class="container">
+            <input type="text" required name="last name" autofocus />
+            <label>Sobrenome</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="container">
+            <input type="email" required name="email" />
+            <label>E-mail</label>
+          </div>
+          <div class="container">
+            <input type="email" required name="email" />
+            <label>E-mail</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="container">
+            <input type="password" required name="password" />
+            <label>Senha</label>
+          </div>
+          <div class="container">
+            <input type="password" required name="confirm" />
+            <label>Confirmar senha</label>
+          </div>
+          <div class="container">
+            <input type="password" required name="confirm" />
+            <label>Confirmar senha</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div id="check">
+            <input type="checkbox" required name="accept" />
+            <label>Aceitar os termos de uso</label>
+            <button>Criar conta</button>
+          </div>
+        </fieldset>
+        <a href="#">Ler termos de uso</a>
+      </form>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*TORNA O ELEMENTO UM FLEX CONTAINER, TRANSFORMANDO TODOS OS SEUS ELEMENTOS INTERNOS(FILHOS) EM FLEX ITENS*/
+    display: flex;
+    /*aLINHA OS FLEX ITENS DE ACORDO COM O EIXO DO CONTAINER*/
+    align-items: center;
+    /*ALINHA OS ITENS FLEX DO CONTAINER DE ACORDO COM A DIREÇÃO*/
+    justify-content: center;
+    /*aLTURA MÍNIMA DO ELEMENTO*/
+    /*UNIDADES DE TAMANHO DE TELA VH E VW*/
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #9d9d9d;
+}
+
+/*
+#parallelogram {
+    background: #00acd7;
+    /*largura do elemento*/
+/* width: 1000px;
+    height: 720px;
+    /*limitee maximo do elemento*/
+/*  max-width: 70vw;
+    border-radius: 10px;
+
+    box-shadow: 5px 5px 15px;
+    /*MODIFICA A INCLINAÇÃO DO ELEMENTO EM UM PLANO 2D*/
+/*PARÂMETROS: eixo x, eixo y, em graus*/
+/* transform: skew(6deg, 3deg);
+    /*POSICIONA QUALQUER ELEMENTO DE ACORDO COM O ELEMENTO PAI, DEIXANDO DE FAZER PARTE DO FLUXO COMUM DO DOCUMENTO*/
+/* position: absolute;
+    z-index: -1;
+}
+*/
+section {
+    display: flex;
+    background: #fff;
+    padding: 30px 5px;
+    border-radius: 10px;
+    /*sombra no elemento*/
+    box-shadow: 5px 5px 15px;
+    /*Tamanho minimo do elemnto*/
+    max-width: 70vw;
+}
+
+section h1 {
+    padding: 40px 10px;
+    /*Alinha o texto no centro*/
+    text-align: center;
+
+}
+
+fieldset {
+    border: none
+}
+
+/*Nome e sobrenome*/
+fieldset:nth-child(2) {
+    display: flex;
+
+}
+
+/*Senha e confirmar senha*/
+fieldset:nth-child(4) {
+    display: flex;
+    padding-top: 20px;
+}
+
+/*Caixa de seleção com o botão*/
+fieldset:nth-child(5) {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.container input {
+    margin: 10px 10px;
+    width: calc(100% - 20px);
+    height: 70px;
+    border: none;
+    background: white;
+    border-radius: 4px;
+    color: #333;
+    font-size: 18px;
+    /*aumenta a largura do contorno do texto*/
+    font-weight: 700;
+    padding: 14px 10px 0 10px;
+    border: 1px solid #555;
+}
+
+.container {
+    position: relative;
+    flex: 1;
+}
+
+.container label {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9d9d9d;
+    /*Posiciona qualquer elemento de acordo com o elemento pai, deixando de fazer parte do fluxo comum do documento */
+    position: absolute;
+    line-height: 70px;
+    /*Talvez precise voltar */
+    top: 10px;
+    left: 20px;
+    /*impede a seleção de texto*/
+    user-select: none;
+    /*Se o elemento deve agir ou não a eventos do ponteiro*/
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+/*Quando ocorrer o foco no input altere as propriedades do label*/
+.container input:focus~label,
+.container input:valid~label {
+    left: 20px;
+    /*Quando clicado move o nome pra cima do input*/
+    top: -35px;
+    color: black;
+
+}
+
+#check {
+    width: 50%;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: flex;
+}
+
+#check input {
+    width: 25px;
+    height: 25px;
+    /*auto - Centraliza o elemeno na horizontal.
+    0 - Não aleta a margem a esqeurda e diretia
+    */
+    margin: auto 0;
+
+}
+
+#check label {
+    margin: auto 10px;
+    color: #555;
+    transition: 0.3s;
+}
+
+#check input:checked~label,
+#check input:valid~label {
+    color: #00acd7;
+}
+
+button {
+    margin: 40px 0;
+    margin-left: 10px;
+    /*Ocupar metade do fieldset descontando a margin de 10px*/
+    width: calc(50% - 10px);
+    height: 70px;
+    background: #00acd7;
+
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    /*Linear - mesma velocidade do inicio ao fin*/
+    transition: 0.3s linear;
+}
+
+button:hover {
+    opacity: 0.65;
+}
+
+form a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+    padding-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+}
+
+form a:hover {
+    color: #111;
+}
+
+@media only screen and (max-width:800px) {
+
+    section {
+        min-width: 95vw;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    fieldset:nth-child(2),
+    fieldset:nth-child(4),
+    fieldset:nth-child(5) {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    fieldset:nth-child(4),
+    fieldset:nth-child(3) {
+        padding: 0px;
+    }
+
+    div#check {
+        width: 100%;
+
+    }
+
+    button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
